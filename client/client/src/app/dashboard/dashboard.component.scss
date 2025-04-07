@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/layout' as *;
+@use '../../styles/components' as *;
+@use '../../styles/utilities' as *;
+@use '../../styles/animations' as *;
+
+.dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(145deg, $color-bg, #1f1f1f);
+  background-image: url('/assets/bg-pattern.png'); // Optional background
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: $space-6 0;
+}
+
+.nav-bar {
+  @extend .d-flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  padding: $space-3;
+  border-radius: $radius-lg;
+  background-color: $color-overlay;
+  @include glass;
+
+  .nav-link {
+    @extend .button;
+    background: none;
+    color: $color-text;
+    padding: $space-2 $space-4;
+    font-weight: $font-weight-bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+
+    &.active {
+      background: linear-gradient(to right, $color-accent-eth, $color-accent-xrp);
+      color: black;
+    }
+
+    &:hover {
+      border-color: $color-accent-xrp;
+      color: $color-accent-xrp;
+    }
+  }
+}
+
+.tab-content {
+  min-height: 400px;
+}

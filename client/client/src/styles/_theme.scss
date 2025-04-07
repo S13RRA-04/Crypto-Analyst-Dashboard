@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+body {
+  background-color: $color-bg;
+  background-image: url('../assets/bg-pattern.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: $color-text;
+  font-family: $font-main;
+  margin: 0;
+  padding: 0;
+}

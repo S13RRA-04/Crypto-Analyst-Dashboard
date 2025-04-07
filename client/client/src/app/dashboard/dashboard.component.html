@@ -1,0 +1,19 @@
+<div class="dashboard-bg">
+  <div class="container">
+    <nav class="nav-bar mb-5">
+      <a routerLink="/etherscan" routerLinkActive="active" class="nav-link">Etherscan</a>
+      <a routerLink="/moralis" routerLinkActive="active" class="nav-link">Moralis</a>
+      <a routerLink="/graphsense" routerLinkActive="active" class="nav-link">GraphSense</a>
+      <a routerLink="/shodan" routerLinkActive="active" class="nav-link">Shodan</a>
+      <a routerLink="/dune" routerLinkActive="active" class="nav-link">Dune</a>
+      <a routerLink="/logs" routerLinkActive="active" class="nav-link">Logs</a>
+    </nav>
+
+    <div class="tab-content card fade-in">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p>&copy; 2023 Crypto Investigator Dashboard. All rights reserved.</p>
+  <p>Developed by Cody Hitson</p>

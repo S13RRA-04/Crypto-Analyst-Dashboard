@@ -1,0 +1,92 @@
+<div class="tool-box fade-in w-full max-w-lg mx-auto">
+  <h2 class="mb-4 text-center">🧠 Moralis Wallet Intelligence</h2>
+
+  <div class="d-flex flex-col gap-3">
+    <label for="chain">Select Blockchain:</label>
+    <select id="chain" [(ngModel)]="selectedChain">
+      <option *ngFor="let chain of chains" [value]="chain">
+        {{ chain }}
+      </option>
+    </select>
+
+    <input
+      class="input"
+      [(ngModel)]="walletAddress"
+      placeholder="Enter wallet address"
+    />
+    <div class="text-sm text-gray-500 mb-2">
+      <p>Example: 0x1234567890abcdef1234567890abcdef12345678</p>
+      <p>Note: Ensure the address is valid for the selected blockchain.</p>
+      
+    <button
+      class="button"
+      [disabled]="loading || !walletAddress"
+      (click)="lookup()"
+    >
+      {{ loading ? 'Looking up...' : 'Lookup' }}
+    </button>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="errorMessage" class="text-error mt-3">
+    ⚠️ {{ errorMessage }}
+  </div>
+
+  <!-- Result -->
+<div *ngIf="result && !errorMessage" class="result-box mt-4">
+  <p class="text-accent"><strong>Address:</strong> {{ walletAddress }}</p>
+
+  <!-- ERC-20 Tokens -->
+  <div *ngIf="result.erc20Tokens?.length">
+    <h3 class="section-title">ERC-20 Tokens</h3>
+    <div class="token-grid">
+      <div *ngFor="let token of result.erc20Tokens" class="token-card">
+        <img [src]="token.token_logo" alt="{{ token.token_symbol }}" class="token-logo" />
+        <div>
+          <strong>{{ token.token_symbol }}</strong><br />
+          <span>{{ token.token_name }}</span><br />
+          <span class="text-sm">Balance: {{ token.value_formatted || token.value }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NFTs -->
+  <div *ngIf="result.nfts?.length">
+    <h3 class="section-title">NFTs</h3>
+    <div class="nft-grid">
+      <div *ngFor="let nft of result.nfts" class="nft-card">
+        <img [src]="nft.media_url || nft.image_url || 'assets/nft-placeholder.png'" alt="NFT Image" />
+        <div class="text-xs text-center">
+          {{ nft.name || 'Unnamed' }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet History -->
+  <div *ngIf="result.walletHistory?.length">
+    <h3 class="section-title">Wallet History</h3>
+    <div class="tx-grid">
+      <div *ngFor="let tx of result.walletHistory" class="tx-card">
+        <div class="tx-summary">{{ tx.summary }}</div>
+        <div class="tx-meta">
+          <span><b>From:</b> {{ tx.from_address }}</span>
+          <span><b>To:</b> {{ tx.to_address }}</span>
+          <span><b>Value:</b> 
+            {{ tx.value_formatted || tx.value }} 
+            {{ tx.erc20_transfers?.[0]?.token_symbol || 'ETH' }}
+          </span>
+          <span><b>Gas Fee:</b> {{ tx.transaction_fee }}</span>
+          <span><b>Date:</b> {{ tx.block_timestamp | date:'short' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-spinner">
+      <img src="assets/loading.gif" alt="Loading..." />
+    </div>
+</div>

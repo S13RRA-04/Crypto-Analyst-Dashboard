@@ -1,0 +1,43 @@
+@use './variables' as *;
+  
+  .button {
+    display: inline-block;
+    padding: $space-2 $space-4;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+    border: none;
+    border-radius: $radius-md;
+    background: linear-gradient(to right, $color-accent-eth, $color-accent-xrp);
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-1px);
+      //@include glowing-border;
+    }
+  }
+  
+  .input {
+    padding: $space-2;
+    border-radius: $radius-sm;
+    border: 1px solid $color-muted;
+    background-color: $color-surface;
+    color: $color-text;
+    font-size: $font-size-md;
+  
+    &:focus {
+      outline: none;
+      border-color: $color-accent-xrp;
+    }
+  }
+  
+  .result-box {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: $radius-md;
+    padding: $space-4;
+    margin-top: $space-3;
+    // Optional: fallback shadow if you want
+    box-shadow: 0 0 16px rgba(102, 255, 249, 0.2);
+  }
+  

@@ -1,0 +1,81 @@
+@use './variables' as *;
+
+@mixin glass($blur: 12px, $opacity: 0.04) {
+    background: rgba(255, 255, 255, $opacity);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid $color-glass-border;
+  }
+
+  @mixin card {
+    background-color: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-soft;
+    padding: $space-4;
+  }
+  
+  @mixin shadowed {
+    box-shadow: $shadow-soft;
+  }
+  
+  @mixin glowing-border($color: $color-glow, $blur: 16px, $spread: 2px) {
+    box-shadow: 0 0 $blur $spread $color;
+  }
+
+  @mixin gradient-text($from: $color-accent-eth, $to: $color-accent-xrp) {
+    background: linear-gradient(to right, $from, $to);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  // In _mixins.scss
+@mixin gradient-button {
+  background: linear-gradient(45deg, $color-accent-eth, $color-accent-xrp);
+  color: $color-text;
+  border: none;
+  padding: $space-2 $space-4;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+  /* Input style mixin */
+@mixin input-style {
+  background-color: $color-surface;
+  color: $color-text;
+  border: 1px solid $color-muted;
+  border-radius: $radius-sm;
+  padding: $space-2 $space-3;
+  font-size: $font-size-md;
+  width: 100%;
+  transition: border-color 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent-eth;
+  }
+
+  &::placeholder {
+    color: $color-muted;
+  }
+}
+
+// _mixins.scss
+@mixin glowing-card {
+  box-shadow: 0 0 15px 3px rgba(0, 255, 255, 0.75);
+  background-color: #212121;
+  transition: all 0.3s ease;
+}
+
+@mixin card {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+
+  

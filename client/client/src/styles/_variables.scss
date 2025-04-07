@@ -1,0 +1,54 @@
+/* ===============================
+   🎨 Design Tokens & Variables
+================================== */
+
+/* === Colors (Ethereum + XRP fusion) === */
+$color-bg: #0d0d0d;
+$color-surface: #1a1a1a;
+$color-overlay: rgba(255, 255, 255, 0.05);
+$color-glass-border: rgba(255, 255, 255, 0.08);
+$color-light: #f0f0f0;
+
+$color-text: #e0e0e0;
+$color-muted: #999999;
+$color-error: #f44336;
+$color-success: #00e676;
+$color-warning: #ffb300;
+
+$color-accent-eth: #8C8CFF;
+$color-accent-xrp: #00B0FF;
+$color-glow: #66FFF9;
+
+/* === Typography === */
+$font-main: 'Inter', 'Segoe UI', sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+/* === Spacing (8pt system) === */
+$space-0: 0;
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+$space-7: 48px;
+$space-8: 64px;
+
+/* === Layout === */
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 20px;
+
+$shadow-soft: 0 4px 8px rgba(0, 0, 0, 0.3);
+$shadow-glow: 0 0 16px rgba(102, 255, 249, 0.25);
+$shadow-glass: 0 0 20px rgba(255, 255, 255, 0.1);
+$shadow-glass-hover: 0 0 30px rgba(255, 255, 255, 0.2);

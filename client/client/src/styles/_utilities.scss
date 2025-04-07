@@ -1,0 +1,61 @@
+/* ================================
+   ⚙️ Utility Classes Library
+================================= */
+
+@use './variables' as *;
+
+/* Spacing Utilities */
+@for $i from 1 through 10 {
+    .m-#{$i} { margin: #{$i * 0.25}rem !important; }
+    .mt-#{$i} { margin-top: #{$i * 0.25}rem !important; }
+    .mb-#{$i} { margin-bottom: #{$i * 0.25}rem !important; }
+    .ml-#{$i} { margin-left: #{$i * 0.25}rem !important; }
+    .mr-#{$i} { margin-right: #{$i * 0.25}rem !important; }
+  
+    .p-#{$i} { padding: #{$i * 0.25}rem !important; }
+    .pt-#{$i} { padding-top: #{$i * 0.25}rem !important; }
+    .pb-#{$i} { padding-bottom: #{$i * 0.25}rem !important; }
+    .pl-#{$i} { padding-left: #{$i * 0.25}rem !important; }
+    .pr-#{$i} { padding-right: #{$i * 0.25}rem !important; }
+  }
+  
+  /* Widths */
+  .w-full  { width: 100% !important; }
+  .w-half  { width: 50% !important; }
+  .w-auto  { width: auto !important; }
+  .max-w-md { max-width: 768px !important; }
+  .max-w-lg { max-width: 1024px !important; }
+  
+  /* Flexbox */
+  .d-flex        { display: flex !important; }
+  .flex-col      { flex-direction: column !important; }
+  .flex-row      { flex-direction: row !important; }
+  .justify-start { justify-content: flex-start !important; }
+  .justify-end   { justify-content: flex-end !important; }
+  .justify-center { justify-content: center !important; }
+  .justify-between { justify-content: space-between !important; }
+  .items-center  { align-items: center !important; }
+  
+  /* Display */
+  .d-block  { display: block !important; }
+  .d-inline { display: inline !important; }
+  .d-grid   { display: grid !important; }
+  
+  /* Text */
+  .text-left   { text-align: left !important; }
+  .text-center { text-align: center !important; }
+  .text-right  { text-align: right !important; }
+  .text-muted  { color: $color-muted !important; }
+  
+  /* Border radius */
+  .rounded       { border-radius: 0.5rem !important; }
+  .rounded-sm    { border-radius: 0.25rem !important; }
+  .rounded-full  { border-radius: 9999px !important; }
+  
+  /* Visibility */
+  .hidden     { display: none !important; }
+  .visible    { display: block !important; }
+  
+  /* Cursor */
+  .cursor-pointer { cursor: pointer !important; }
+    .cursor-not-allowed { cursor: not-allowed !important; }  
